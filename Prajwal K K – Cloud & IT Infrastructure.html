@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prajwal K K – Cloud & IT Infrastructure</title>
+<meta name="description" content="Computer Science undergraduate focused on cloud operations, Linux, networking and IT support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--panel:#fff;--ink:#14213d;--muted:#566377;--line:#d3dbe5;--blue:#1f5fd0;--ok:#16874f;--warn:#b87400;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1522;--panel:#151f31;--ink:#e6ecf5;--muted:#9aa8bd;--line:#26334a;--blue:#6ea0ff;--ok:#4cc58a;--warn:#e8b04a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1522;--panel:#151f31;--ink:#e6ecf5;--muted:#9aa8bd;--line:#26334a;--blue:#6ea0ff;--ok:#4cc58a;--warn:#e8b04a;color-scheme:dark}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--panel);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--panel);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font:500 .95rem var(--mono);color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.led{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 25%,transparent)}
+nav{display:flex;gap:18px;overflow-x:auto}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+section{padding:72px 0 0}
+h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.08;margin:0 0 18px;letter-spacing:-.02em;font-weight:600}
+h2{font-size:1.6rem;margin:0 0 6px;letter-spacing:-.01em;font-weight:600}
+.sub{color:var(--muted);margin:0 0 28px;max-width:62ch}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:56px}
+.hero p{color:var(--muted);max-width:52ch;margin:0 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:6px;border:1px solid var(--blue);background:var(--blue);color:#fff;text-decoration:none;font-weight:500}
+.btn.alt{background:transparent;color:var(--blue)}
+.btn:hover{filter:brightness(1.1)}
+.term{background:#0c1424;color:#d6e2f5;border-radius:10px;border:1px solid #243049;font:400 .86rem/1.65 var(--mono);overflow:hidden}
+.term .bar{display:flex;gap:6px;padding:10px 14px;background:#141d31;border-bottom:1px solid #243049;color:#8fa1bd}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#33415c}
+.term pre{margin:0;padding:16px;min-height:300px;white-space:pre-wrap;word-break:break-word}
+.p{color:#6ea0ff}.g{color:#4cc58a}.y{color:#e8b04a}.d{color:#8fa1bd}
+.cur{display:inline-block;width:8px;height:1em;background:#d6e2f5;vertical-align:-2px;animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.about .panel{padding:22px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:.95rem}
+.kv dt{color:var(--muted);font-family:var(--mono);font-size:.85rem}
+.kv dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font:500 .8rem var(--mono);border:1px solid var(--line);border-radius:4px;padding:3px 9px;color:var(--muted)}
+.svc{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.svc th,.svc td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.svc th{font:500 .85rem var(--mono);color:var(--muted);background:color-mix(in srgb,var(--line) 35%,var(--panel))}
+.svc tr:last-child td{border-bottom:0}
+.svc td:first-child{font:500 .92rem var(--mono);white-space:nowrap}
+.ok{color:var(--ok);font:500 .85rem var(--mono);white-space:nowrap}
+.ok::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-right:8px}
+.scroll{overflow-x:auto}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tools button{font:500 .85rem var(--mono);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.proj{display:grid;gap:18px}
+.card{padding:22px;border-left:4px solid var(--blue)}
+.card h3{margin:0 0 4px;font-size:1.2rem}
+.meta{font:400 .85rem var(--mono);color:var(--muted);margin-bottom:12px}
+.card ul{margin:12px 0 0;padding-left:20px}
+.card li{margin-bottom:6px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font:500 .8rem var(--mono);margin-top:14px}
+.flow span{border:1px solid var(--line);background:var(--bg);padding:4px 10px;border-radius:4px}
+.flow b{color:var(--muted);font-weight:400}
+.log{list-style:none;margin:0;padding:0}
+.log li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.log li:last-child{border-bottom:0}
+.log time{font:500 .85rem var(--mono);color:var(--warn)}
+.log strong{display:block}
+.log span{color:var(--muted)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.contact a{display:block;padding:16px 18px;text-decoration:none;color:var(--ink)}
+.contact a:hover{border-color:var(--blue)}
+.contact small{display:block;font:400 .8rem var(--mono);color:var(--muted)}
+footer{padding:56px 0 40px;color:var(--muted);font:400 .85rem var(--mono)}
+@media(max-width:800px){.hero,.about{grid-template-columns:1fr}.log li{grid-template-columns:1fr;gap:2px}section{padding-top:56px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cur{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top"><span class="led" aria-hidden="true"></span>prajwal-k-k</a>
+<nav aria-label="Sections"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#activity">Activity</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top" class="wrap">
+<div class="hero">
+<div>
+<h1>Keeping systems running, and finding out why when they don’t.</h1>
+<p>I’m Prajwal K K, a Computer Science undergraduate with hands-on experience in cloud technologies, Linux, networking and backend development. I’m looking for roles in IT support, IT infrastructure, cloud operations and troubleshooting.</p>
+<div class="btns"><a class="btn" href="#projects">See what I’ve built</a><a class="btn alt" href="#contact">Get in touch</a></div>
+</div>
+<div class="term" role="img" aria-label="Terminal showing Prajwal's system status: Linux, Docker, AWS and networking skills all active">
+<div class="bar"><i></i><i></i><i></i><span style="margin-left:8px;font-size:.8rem">prajwal@infra: ~</span></div>
+<pre id="t"></pre>
+</div>
+</div>
+
+<section id="about">
+<h2>About</h2>
+<p class="sub">Backend developer by training, infrastructure person by interest.</p>
+<div class="about">
+<div class="panel">
+<p style="margin-top:0">I build backend applications with Java, Spring Boot and Docker, and deploy them on AWS. What I enjoy most is the operations side: how services are packaged, how they talk to each other over a network, and how to track down a problem when one stops responding.</p>
+<p>My core coursework covers the layers underneath every application.</p>
+<div class="chips"><span class="chip">Operating Systems</span><span class="chip">Computer Networks</span><span class="chip">DBMS</span><span class="chip">OOPs</span></div>
+</div>
+<div class="panel">
+<dl class="kv">
+<dt>role</dt><dd>B.E. CSE student</dd>
+<dt>graduating</dt><dd>2027 (expected)</dd>
+<dt>cgpa</dt><dd>8.88 / 10</dd>
+<dt>interests</dt><dd>IT support, infrastructure, cloud operations, troubleshooting, technology management</dd>
+</dl>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<p class="sub">Laid out like a service list. Filter by area.</p>
+<div class="tools" role="group" aria-label="Filter skills">
+<button data-f="all" aria-pressed="true">all</button><button data-f="infra" aria-pressed="false">infrastructure</button><button data-f="cloud" aria-pressed="false">cloud</button><button data-f="dev" aria-pressed="false">development</button>
+</div>
+<div class="scroll" style="margin-top:16px"><table class="svc">
+<thead><tr><th>Service</th><th>Covers</th><th>Status</th></tr></thead>
+<tbody id="rows">
+<tr data-g="infra"><td>linux</td><td>Command line, day-to-day administration</td><td class="ok">active</td></tr>
+<tr data-g="infra"><td>windows</td><td>Everyday use and setup</td><td class="ok">active</td></tr>
+<tr data-g="infra"><td>networking</td><td>IP addressing, LAN basics, Computer Networks coursework</td><td class="ok">active</td></tr>
+<tr data-g="infra"><td>docker</td><td>Containerising and deploying apps</td><td class="ok">active</td></tr>
+<tr data-g="cloud"><td>aws-lambda</td><td>Serverless functions for background processing</td><td class="ok">active</td></tr>
+<tr data-g="cloud"><td>aws-s3</td><td>File storage</td><td class="ok">active</td></tr>
+<tr data-g="cloud"><td>aws-sqs</td><td>Queues between services</td><td class="ok">active</td></tr>
+<tr data-g="dev"><td>java</td><td>Spring Boot, REST APIs</td><td class="ok">active</td></tr>
+<tr data-g="dev"><td>sql / postgresql</td><td>Relational databases, DBMS coursework</td><td class="ok">active</td></tr>
+<tr data-g="dev"><td>git</td><td>Version control</td><td class="ok">active</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="sub">Each one is a deployed, multi-part system rather than a single script.</p>
+<div class="proj">
+<article class="panel card">
+<h3>MemoryVault</h3>
+<div class="meta">Java, Spring Boot, PostgreSQL, Docker · Jun 2026</div>
+A file backup and recovery application.
+<ul>
+<li>Splits files into chunks and avoids storing duplicate data.</li>
+<li>Snapshots let users save versions of their data and restore them when needed.</li>
+<li>JWT login, role-based access and REST APIs, plus a dashboard showing storage usage.</li>
+</ul>
+<div class="flow" aria-label="Flow"><span>Upload</span><b>›</b><span>Chunk + dedupe</span><b>›</b><span>PostgreSQL</span><b>›</b><span>Snapshot / restore</span></div>
+</article>
+<article class="panel card">
+<h3>Secure Document Q&amp;A</h3>
+<div class="meta">FastAPI, PostgreSQL, pgvector, Groq, Docker · Jul 2026</div>
+A question answering app where each user gets answers only from documents they are allowed to access.
+<ul>
+<li>Document embeddings are stored in PostgreSQL (pgvector) to find the most relevant content for each question.</li>
+<li>A Groq LLM generates answers with source file references.</li>
+<li>APIs are secured with JWT, and the app is deployed with Docker.</li>
+</ul>
+<div class="flow"><span>Question</span><b>›</b><span>Access check</span><b>›</b><span>pgvector search</span><b>›</b><span>Groq answer + sources</span></div>
+</article>
+<article class="panel card">
+<h3>Smart Document Redaction Pipeline</h3>
+<div class="meta">AWS Lambda, S3, SQS, Python, Groq · Jul 2026</div>
+A serverless AWS application that finds and hides sensitive information (emails, phone numbers, ID numbers) in PDF files.
+<ul>
+<li>S3 stores the files, while SQS with Lambda processes them in the background so requests do not time out.</li>
+<li>A Groq LLM identifies sensitive data and PyMuPDF blacks it out.</li>
+<li>A simple frontend handles upload and status.</li>
+</ul>
+<div class="flow"><span>Upload</span><b>›</b><span>S3</span><b>›</b><span>SQS</span><b>›</b><span>Lambda</span><b>›</b><span>Redacted PDF</span></div>
+</article>
+</div>
+</section>
+
+<section id="activity">
+<h2>Hackathons &amp; leadership</h2>
+<p class="sub">Building under time pressure, and helping others get their work online.</p>
+<div class="panel" style="padding:8px 22px"><ul class="log">
+<li><time>Hackathon</time><div><strong>Growth Intelligence Engine</strong><span>DataVex AI Hackathon. An AI tool that finds growth opportunities and generates strategy briefs and blog and social media content.</span></div></li>
+<li><time>Hackathon</time><div><strong>SkillShare Platform</strong><span>TCE Hackathon, Sahyadri College. A platform where students teach and learn skills from each other.</span></div></li>
+<li><time>Mentorship</time><div><strong>Cloud hosting and deployment</strong><span>Mentored juniors under the SOSC (Sahyadri Open Source Community) program.</span></div></li>
+</ul></div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p class="sub">&nbsp;</p>
+<div class="scroll"><table class="svc" style="margin-top:-18px">
+<thead><tr><th>Course</th><th>Institute</th><th>Board</th><th>Year</th><th>Score</th></tr></thead>
+<tbody>
+<tr><td>B.E., CSE</td><td>Sahyadri College of Engg. &amp; Mgmt., Mangaluru</td><td>VTU, Belagavi</td><td>2027 (exp.)</td><td>CGPA 8.88/10</td></tr>
+<tr><td>12th (PUC)</td><td>Vivekananda PU College, Puttur</td><td>Karnataka PU Board</td><td>2023</td><td>94.83%</td></tr>
+<tr><td>10th (SSLC)</td><td>Saverapura Eng. Med. High School, Sullia</td><td>KSEEB</td><td>2021</td><td>97.76%</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p class="sub">Open to internships and entry-level roles in IT support, infrastructure and cloud operations.</p>
+<div class="contact">
+<a class="panel" href="mailto:prajwalkk513@gmail.com"><small>email</small>prajwalkk513@gmail.com</a>
+<a class="panel" href="tel:+917019338933"><small>phone</small>+91-7019338933</a>
+<a class="panel" href="https://www.linkedin.com/in/prajwal-k-k" rel="noopener"><small>linkedin</small>prajwal-k-k</a>
+<a class="panel" href="https://github.com/prajwalkk22" rel="noopener"><small>github</small>prajwalkk22</a>
+</div>
+</section>
+</main>
+<footer><div class="wrap">Prajwal K K · static site, no tracking</div></footer>
+
+<script>
+(function(){
+var el=document.getElementById('t');
+var lines=[
+'<span class="p">$</span> whoami',
+'prajwal-k-k  <span class="d">(cse undergrad, 2027)</span>',
+'<span class="p">$</span> uname -a',
+'Linux · Windows  <span class="d">comfortable on both</span>',
+'<span class="p">$</span> ping -c1 lan.local',
+'64 bytes: icmp_seq=1 ttl=64  <span class="g">reachable</span>',
+'<span class="p">$</span> docker ps',
+'memoryvault   <span class="g">Up</span>   docqa   <span class="g">Up</span>',
+'<span class="p">$</span> aws sqs get-queue-attributes',
+'redaction-queue  <span class="g">0 messages in flight</span>',
+'<span class="p">$</span> status --role',
+'<span class="g">ready</span> for IT support, infrastructure, cloud ops'
+];
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){el.innerHTML=lines.join('\n');return;}
+var i=0,out='';
+function next(){
+if(i>=lines.length){el.innerHTML=out+'<span class="p">$</span> <span class="cur"></span>';return;}
+out+=lines[i]+'\n';i++;
+el.innerHTML=out+'<span class="cur"></span>';
+setTimeout(next,i%2?450:700);
+}
+next();
+var btns=document.querySelectorAll('.tools button'),rows=document.querySelectorAll('#rows tr');
+btns.forEach(function(b){b.addEventListener('click',function(){
+btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+rows.forEach(function(r){r.hidden=!(b.dataset.f==='all'||r.dataset.g===b.dataset.f)});
+});});
+})();
+</script>
+</body>
+</html>
